@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Song Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div id="greeting" class="container text-center mt-3 fw-bold"></div>
+
+    <!--Add Song Section-->
+    <div class="container mt-4">
+        <div class="card p-4 shadow-sm">
+            <h2 class="text-center mb-3">Add Song</h2>
+            <form id="addSong">
+                <div class="mb-3">
+                    <label for="songname" class="form-label">Song Name:</label>
+                    <input type="text" class="form-control" id="songname" name="song_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="artist" class="form-label">Artist:</label>
+                    <input type="text" class="form-control" id="artist" name="artist" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year:</label>
+                    <input type="number" min="1900" max="2099" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating:</label>
+                    <input type="number" min="1" max="5"class="form-control" id="rating" name="rating" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Add Song</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Delete Song Section-->
+    <div class="container mt-4">
+        <div class="card p-4 shadow=sm">
+            <h2 class="text-center mb-3">Delete Song</h2>
+            <form id="deleteSong">
+                <div class="mb-3">
+                    <label for="songID" class="form-label">Song Name:</label>
+                    <input type="text" class="form-control" id="songID" name="delete_song" required>
+                </div>
+                <button type="submit" class="btn btn-danger w-100">Delete Song</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Song List Table-->
+    <div class="container mt-5">
+        <div class="card p-4 shadow=sm">
+            <h2 class="text-center mb-3">Song List</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered text-center">
+                    <thead class="table-dark">
+                        <tr>
+                            <!-- <th>ID</th> -->
+                            <th>Song Name</th>
+                            <th>Artist</th>
+                            <th>Year</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!--Song List will be displayed here dynamicaly-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS (Optional, needed for Bootstrap components like modals) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript File -->
+    <script src="songmanager.bundle.js"></script>
+</body>
+</html>
